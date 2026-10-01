@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #09090b;
+    --bg-surface: #121216;
+    --bg-surface-elevated: #18181f;
+    --bg-subtle: #22222b;
+    --border-hairline: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(226, 88, 34, 0.3);
+    --text-primary: #f4f4f6;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --accent-orange: #e25822;
+    --accent-amber: #f59e0b;
+    --accent-gold: #d4af37;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .light-theme {
+    --bg-primary: #f7f7f5;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f0f0ed;
+    --bg-subtle: #e4e4e0;
+    --border-hairline: rgba(0, 0, 0, 0.08);
+    --border-accent: rgba(226, 88, 34, 0.35);
+    --text-primary: #121216;
+    --text-secondary: #52525b;
+    --text-muted: #8c8c96;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Film Grain Texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e25822;
+}
+
+/* Print Friendly Styles for Resume */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
